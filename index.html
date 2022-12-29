@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" id="html"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.1.1/dist/chart.umd.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./loadPokemon.js"></script>
+    <script src="./html.js"></script>
+    <script src="./chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+
+<body onload="loadTypes()" id="body" >
+
+    <div class="header">
+        <div class="buttons-bar" id="header">
+            <a id="button1" onclick="loadPokemon('1')">KANTO</a>
+            <a id="button2" onclick="loadPokemon('2')">JOHTO</a>
+            <a id="button3" onclick="loadPokemon('3')">HOENN</a>
+            <a id="button4" onclick="loadPokemon('4')">SINNOH</a>
+            <a id="button5" onclick="loadPokemon('5')">UNOVA</a>
+            <a id="button6" onclick="loadPokemon('6')">KALOS</a>
+            <a id="button7" onclick="loadPokemon('7')">ALOLA</a>
+            <a id="button8" onclick="loadPokemon('8')">GALAR</a>
+
+            <img class="close" src="./img/arrow-left.png" onclick="closeTaskBar()">
+        </div>
+        <div id="searchBar" class="search-bar d-none" onclick="openSearchBar()">
+            <img class="lupe" src="./img/lupe (1).png" alt="">
+            <input placeholder="Search Pokémon" onclick="event.stopPropagation()" type="search" class="d-none"
+                id="search" onkeyup="filter()">
+        </div>
+        <div class="region-button d-none" id="regionButton" onclick="openTaskBar()">
+            <span>R</span>
+            <span>E</span>
+            <span>G</span>
+            <span>I</span>
+            <span>O</span>
+            <span>N</span>
+            <span>S</span>
+        </div>
+    </div>
+    <div class="generation-body d-none" id="generationBody"></div>
+    <div class="overlay d-none" id="overlay" onclick="closeOverlay()"></div>
+    <div id="alert" class="alert alert-dark d-none" role="alert">
+        Bitte warten Sie bis die Pokemons der aktuellen Region geladen sind.<br> Es kann sich nurnoch um Sekunden handeln.
+      </div>
+
+</body>
+
+</html>
